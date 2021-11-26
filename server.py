@@ -45,4 +45,4 @@ def get_feedback():
     return render_template("feedbacks.html", result=result)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=5000)
