@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.88.1">
+    <title>Checkout example · Bootstrap v5.1</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/checkout/">
+
+
+
+    <!-- Bootstrap core CSS -->
+<link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+
+    <!-- Custom styles for this template -->
+    <link href="css/form-validation.css" rel="stylesheet">
+  </head>
+  <body class="bg-light">
+
+<div class="container">
+  <main>
+
+    <div class="container">
+        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+          <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+            <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+            <span class="fs-4">Barbershop Kingdom</span>
+          </a>
+
+          <ul class="nav nav-pills">
+            <li class="nav-item"><a href="#" class="nav-link active" aria-current="page"> Add record </a></li>
+            <li class="nav-item"><a href="#" class="nav-link"> empty </a></li>
+            <li class="nav-item"><a href="#" class="nav-link"> empty </a></li>
+            <li class="nav-item"><a href="#" class="nav-link"> empty </a></li>
+            <li class="nav-item"><a href="#" class="nav-link"> empty </a></li>
+          </ul>
+        </header>
+      </div>
+
+    <div class="py-5 text-center">
+      <img class="d-block mx-auto mb-4" src="resources/bootstrap-logo.svg" alt="" width="72" height="57">
+      <h2>Add record</h2>
+      <p class="lead"> Enter information about the performed service. </div>
+
+    <div class="row g-5">
+      <!-- <div class="col-md-5 col-lg-4 order-md-last">
+        <h4 class="d-flex justify-content-between align-items-center mb-3">
+          <span class="text-primary">Your cart</span>
+          <span class="badge bg-primary rounded-pill">3</span>
+        </h4>
+        <ul class="list-group mb-3">
+          <li class="list-group-item d-flex justify-content-between lh-sm">
+            <div>
+              <h6 class="my-0">Product name</h6>
+              <small class="text-muted">Brief description</small>
+            </div>
+            <span class="text-muted">$12</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between lh-sm">
+            <div>
+              <h6 class="my-0">Second product</h6>
+              <small class="text-muted">Brief description</small>
+            </div>
+            <span class="text-muted">$8</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between lh-sm">
+            <div>
+              <h6 class="my-0">Third item</h6>
+              <small class="text-muted">Brief description</small>
+            </div>
+            <span class="text-muted">$5</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between bg-light">
+            <div class="text-success">
+              <h6 class="my-0">Promo code</h6>
+              <small>EXAMPLECODE</small>
+            </div>
+            <span class="text-success">−$5</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between">
+            <span>Total (USD)</span>
+            <strong>$20</strong>
+          </li>
+        </ul>
+
+        <form class="card p-2">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Promo code">
+            <button type="submit" class="btn btn-secondary">Redeem</button>
+          </div>
+        </form>
+      </div> -->
+      <div class="col-md-12 col-lg-12">
+        <h4 class="mb-3">Information about service</h4>
+        <form class="needs-validation" novalidate>
+          <div class="row g-3">
+            <div class="col-sm-12">
+              <label for="country" class="form-label">Employee name</label>
+              <select class="form-select" id="country" required>
+                <option value="Zhandos Kipshakbaev">Zhandos Kipshakbaev</option>
+                <option value="Assanali Fazilzhan">Assanali Fazilzhan</option>
+                <option value="Kamil Khairulin">Kamil Khairulin</option>
+                <option value="Someone Else">Someone Else</option>
+              </select>
+            </div>
+
+            <div class="col-md-6">
+              <label for="country" class="form-label">Rate (0 - 5)</label>
+              <select class="form-select" id="country" required>
+                <option value="5">5</option>
+                <option value="4">4</option>
+                <option value="3">3</option>
+                <option value="2">2</option>
+                <option value="1">1</option>
+                <option value="0">0</option>
+              </select>
+              <div class="invalid-feedback">
+                Please select a valid rate.
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <label for="state" class="form-label">Type of service</label>
+              <select class="form-select" id="state" required>
+                <option value="Haircut">Haircut</option>
+                <option value="Shaving beard">Shaving beard</option>
+                <option value="Shaving head">Shaving head</option>
+                <option value="Styling">Styling</option>
+                <option value="Hairwash">Hairwash</option>
+              </select>
+              <div class="invalid-feedback">
+                Please provide a valid state.
+              </div>
+            </div>
+
+
+            <br> </br>
+            <h4 class="mb-3">Information about client</h4>
+            <div class="col-12">
+              <label for="email" class="form-label">Phone <span class="text-muted">(Optional)</span></label>
+              <input type="email" class="form-control" id="phone" placeholder="+79000000000">
+              <div class="invalid-feedback">
+                Please enter a valid phone number.
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="address" class="form-label">Feedback   <span class="text-muted">(Optional)</span></label>
+              <input type="text" class="form-control" id="feedback" placeholder="Some text">
+              <div class="invalid-feedback">
+                Please enter your feedback.
+              </div>
+            </div>
+
+          <hr class="my-4">
+
+          <br>
+          </br>
+          <button class="w-100 btn btn-primary btn-lg" type="submit">Continue to checkout</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer class="my-5 pt-5 text-muted text-center text-small">
+    <p class="mb-1">&copy; 2017–2021 Company Name</p>
+    <ul class="list-inline">
+      <li class="list-inline-item"><a href="#">Privacy</a></li>
+      <li class="list-inline-item"><a href="#">Terms</a></li>
+      <li class="list-inline-item"><a href="#">Support</a></li>
+    </ul>
+  </footer>
+</div>
+    <script src="js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="js/form-validation.js"></script>
+  </body>
+</html>
