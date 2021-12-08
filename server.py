@@ -70,8 +70,8 @@ def generate_qr():
     after_image_path = 'resources/after.png'
     
     services[new_id] = {'employee': temp['name'], 'service': temp['service'], 'before_photo': url_for('static', filename = before_image_path), 'after_photo': url_for('static', filename = after_image_path)}
-    # img = qrcode.make('http://ec2-13-59-255-36.us-east-2.compute.amazonaws.com:5000/feedback/'+temp['name']+'/'+temp['service'])
-    img = qrcode.make('http://192.168.1.56:5000/feedback/'+str(new_id))
+    img = qrcode.make('http://ec2-13-59-255-36.us-east-2.compute.amazonaws.com:5000/feedback/'+str(new_id))
+    # img = qrcode.make('http://192.168.1.56:5000/feedback/'+str(new_id))
     img.save("static/resources/some_file.png")
     return jsonify(isError= False,
                     message= "Success",
