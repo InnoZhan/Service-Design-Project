@@ -64,7 +64,7 @@ def generate_qr():
     path_for_image = 'resources/'+new_id
     before_image_path = path_for_image+'_before.png'
     # after_image_path = path_for_image+'_after.png'
-    beforeImage.save(before_image_path)
+    beforeImage.save('static/'+before_image_path)
     # afterImage.save(after_image_path)
     # before_image_path = 'resources/before.png'
     after_image_path = 'resources/after.png'
