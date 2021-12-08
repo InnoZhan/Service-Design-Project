@@ -21,11 +21,11 @@
         <div class="carousel">
             <div class="carousel-item" id="carousel-item-0">
                 <label id="carousel-photo-text-0" class="carousel-photo-text">Before</label>
-                <div style="background-image: url({{ url_for('static', filename='resources/badhaircut.jpg') }})" class="carousel-photo" id="carousel-photo-0" onclick="change_item(event)"></div>
+                <div style="background-image: url({{ before_image_url }})" class="carousel-photo" id="carousel-photo-0" onclick="change_item(event)"></div>
             </div>
             <div class="carousel-item" id="carousel-item-1">
                 <label id="carousel-photo-text-1" class="carousel-photo-text">After</label>
-                <div style="background-image: url({{ url_for('static', filename='resources/haircut.png') }})" class="carousel-photo" id="carousel-photo-1" onclick="change_item(event)"></div>
+                <div style="background-image: url({{ after_image_url }})" class="carousel-photo" id="carousel-photo-1" onclick="change_item(event)"></div>
             </div>
             <div class="carousel-item" id="carousel-item-2">
                 <div class="container" onclick="change_item(event)">
@@ -131,11 +131,8 @@
                         </div>
                       </div>
                     </div>
-                    <textarea name="" id="comment-area" placeholder="Leave a comment to improve our service"></textarea>
-                    <div id="checker">
-                        <input type="checkbox" name="checker" id="checker-box" checked>
-                        <label for="checker" id="checker-lable">Barbershop may post my photo on social media</label>
-                    </div>
+                    <textarea name="" id="comment-area" placeholder="How do you like your new style?"></textarea>
+                    <input type="text" name="instagram-alias" id="instagram-input" valie="" placeholder="Leave your insta and we will post you">
                     <button id="rate-button" onclick="send();">Rate</button>
                   </div>
             </div>
@@ -162,18 +159,22 @@
 
         function send() {
             var rate = 0;
+            let name = '{{ name }}';
+            let service = '{{ service }}';
+            
             let feedback = $("#comment-area").val();
             for (var i = 1; i <= 5; i++) {
                 if ($("#rating-"+i).is(':checked')) {
                     rate = i;
                 }
             }
-            let allow = $("#checker-box").is(':checked');
+            let alias = $("#instagram-input").val();
+            console.log(alias);
             $.ajax({
                 url: '/sendFeedback',
                 method: 'post',
                 dataType: 'json',
-                data: {rate, feedback, allow},
+                data: {rate, feedback, alias, name, service},
                 success: function(data){
                     if (data.message == 'Success') {
                     alert("Thank you for your feedback");

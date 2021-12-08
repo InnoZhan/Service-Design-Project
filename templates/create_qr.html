@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="name" id="name" placeholder="name">
+    <input type="text" name="service" id="service" placeholder="service">
+    <div id="HERE"></div>
+    <button onclick="send()">create</button>
+    <script>
+        function send() {
+            var name = $("#name").val();
+            var service = $("#service").val();
+            console.log(name);
+            console.log(service);
+            // console.log($.get( "/generate_qr", { dataname, service } ));
+            $.post( "/generate_qr", { name, service } )
+            .done(function( data ) {
+                
+                var img = $('<img id="dynamic">'); //Equivalent: $(document.createElement('img'))
+                img.attr('src', data.image);
+                img.appendTo('#HERE');
+            });
+        }
+    </script>
+</body>
+</html>

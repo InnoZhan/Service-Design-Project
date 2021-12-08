@@ -7,6 +7,9 @@
 body {
     height: 100vh;
     width: 100vw;
+    background-image: url("../resources/background.jpg");
+    background-position: center;
+    background-size: cover;
 }
 
 .carousel {
@@ -19,6 +22,7 @@ body {
 
 #page-indicators {
     position: fixed;
+    z-index: 2;
     top: 0;
     width: 100%;
     display: flex;
@@ -40,17 +44,32 @@ body {
 
 #rate-header {
     font-size: 30pt;
+    color: white;
+    background-color: black;
+    padding: 10px;
+}
+
+#instagram-input {
+  max-width: 360px;
+  width: 100%;
+  font-size: 16pt;
+  text-align: center;
+  padding: 10px;
+  margin: 10px;
 }
 
 #comment-area {
+    display: flex;
+    margin: 10px;
+    padding: 10px;
+    max-width: 360px;
+    width: 100%;
     display: block;
-    width: 270pt;
-    height: 150pt;
     border: solid 1px;
     border-radius: 5pt;
     resize: none;
-    padding: 5pt;
     font-size: 16pt;
+    min-height: 150px;
 }
 
 .carousel-photo {
@@ -75,28 +94,32 @@ body {
 }
 
 .carousel-item {
-    background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/concrete-texture.png");
     display: none;
     width: 100%;
     height: 100%;
 }
 
 .carousel-photo-text {
-    position: fixed;
+    position: absolute;
     text-align: center;
     z-index: 2;
     font-size: 50pt;
     bottom: 10%;
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: rgba(255, 255, 255, 0.8);
     width: 100%;
 }
 
 * { box-sizing: border-box; }
 
 #checker {
+    margin: 10px;
+    background-color: white;
+    border-radius: 5px;
     display: flex;
+    padding: 10px;
     flex-direction: row;
-    width: 270pt;
+    max-width: 360px;
+    width: 100%;
     justify-content: space-around;
     font-size: 16pt;
 }
@@ -110,12 +133,16 @@ body {
 }
 
 #rate-button {
-    width: 270pt;
+    max-width: 360px;  
+    margin: 10px;
+    width: 100%;
     height: 30pt;
     font-size: 20pt;
-    background-color: white;
+    background-color: black;
+    color: white;
     border: solid black 1px;
     border-radius: 5px;
+    
 }
 
 #rate-button:hover {
@@ -123,7 +150,7 @@ body {
 }
 
 .container {
-    background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/concrete-texture.png");
+    /* background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/concrete-texture.png"); */
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -230,6 +257,7 @@ body {
   max-width: 360px;
   background-color: #fff;
   width: 100%;
+  margin: 10px;
   padding: 30px;
   border-radius: 8px;
   display: flex;
