@@ -1,6 +1,8 @@
 * {
     padding: 0;
     margin: 0;
+
+    color: white;
 }
 
 body {
@@ -16,13 +18,14 @@ body {
 }
 
 .feedback {
+    background-color:black;
     display: block;
-    width: 550pt;
-    border: solid 1px;
-    padding: 5pt;
+    width: 100%;
+    border-radius: 5pt;
+    padding: 10pt;
     margin: 20pt;
 }
 
 mark {
-    background-color: rgb(64, 146, 64);
+    background-color: transparent;
 }
